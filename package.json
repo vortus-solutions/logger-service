@@ -1,0 +1,52 @@
+{
+    "name": "@vortus-solutions/logger-service",
+    "version": "1.0.0",
+    "description": "Enhanced logging service for Node.js applications with pretty printing and structured logging",
+    "main": "lib/index.js",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint .",
+        "format": "prettier --write .",
+        "build": "babel src -d lib",
+        "prepare": "npm run build",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
+    },
+    "keywords": [
+        "logger",
+        "pino",
+        "nodejs",
+        "structured-logging"
+    ],
+    "author": "Danilo Recchia <danilo.recchia@vortus.solutions>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vortus-solutions/logger-service.git"
+    },
+    "dependencies": {
+        "pino": "^9.5.0",
+        "pino-pretty": "^13.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.0",
+        "@babel/preset-env": "^7.23.0",
+        "eslint": "^8.53.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-jest": "^27.6.0",
+        "eslint-plugin-node": "^11.1.0",
+        "jest": "^29.7.0",
+        "prettier": "^3.1.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}
